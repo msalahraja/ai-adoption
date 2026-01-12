@@ -1,0 +1,10 @@
+2026-01-11T05:32Z user: setup a angular 19 project, ask me before any major implrmentation
+2026-01-11T05:33Z user: yes eslint config, unit/e2e setup
+2026-01-11T05:33Z user: Project name Ai Adoption | package npm | routing enable | style scss | yes stand alone | ssr hydration
+2026-01-11T05:35Z assistant: added Angular 19 scaffold; awaiting ESLint/e2e confirmation
+2026-01-11T05:36Z user: plus log every prompt and make change log as well
+2026-01-11T05:37Z assistant: confirmed logging + changelog request
+2026-01-11T05:38Z user: yes
+2026-01-11T05:40Z user: yes add huskey as well
+2026-01-11T07:13Z user: why figma-hero.component component not showing anything except black screen
+

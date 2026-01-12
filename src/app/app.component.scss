@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #0a0e1a;
+  width: 100%;
+  padding: 0;
+}
+
+@media screen and (min-width: 769px) {
+  :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

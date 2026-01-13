@@ -1,336 +1,140 @@
-.figma-hero-container {
+.library-section {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  aspect-ratio: 1 / 1;
-  background: rgba(21, 25, 52, 0.90);
-  overflow: hidden;
+  max-width: 1370px;
   margin: 0 auto;
-}
-
-.background-gradient {
-  position: absolute;
-  left: -72.33%;
-  top: -13.92%;
-  width: 286.08%;
-  height: 758.5%;
-  pointer-events: none;
-}
-
-.dark-overlay {
-  position: absolute;
-  left: -1.25%;
-  top: -13.92%;
-  width: 122.5%;
-  height: 149.92%;
-  background: #000;
-  opacity: 0.6;
-  pointer-events: none;
+  overflow: hidden;
+  background: #fff;
 }
 
 .background-image {
   position: absolute;
+  top: 0;
   left: 0;
-  top: 1.83%;
-  width: 100.08%;
-  height: 98.25%;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-.content-wrapper {
-  position: relative;
   width: 100%;
   height: 100%;
-  padding: 5%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.logos {
-  position: absolute;
-  left: 0.25%;
-  top: 6.25%;
-  width: 32.08%;
-  height: 19.42%;
-  max-width: 385px;
-  max-height: 233px;
+.content-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(24px, 5vw, 60px);
+  padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 60px);
+  min-height: 492px;
+}
+
+.library-preview {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 343px;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .text-content {
-  position: absolute;
-  left: 6.17%;
-  top: 26.17%;
-  width: 51.25%;
-  max-width: 615px;
+  flex: 1;
+  max-width: 550px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(12px, 2vw, 24px);
+  gap: clamp(16px, 2vw, 24px);
 }
 
-.heading-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.start-here-text {
-  width: 100%;
-  color: #CAF829;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: clamp(24px, 4.17vw, 50px);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.7;
-  letter-spacing: -0.02em;
-}
-
-.main-heading {
-  width: 100%;
+.heading {
   margin: 0;
-  color: #FFF;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: clamp(32px, 6.67vw, 80px);
-  font-style: normal;
+  color: #000;
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.019em;
+}
+
+.description {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: clamp(13px, 1.8vw, 14px);
   font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.04em;
+  line-height: 1.71;
+  letter-spacing: -0.006em;
 }
 
-.get-started-form {
-  margin-top: clamp(20px, 3vw, 40px);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  max-width: 400px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-input {
-  padding: 14px 18px;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #FFF;
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(202, 248, 41, 0.2);
-  border-radius: 8px;
-  outline: none;
-  transition: all 0.3s ease;
-
-  &::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+/* Tablet and smaller */
+@media screen and (max-width: 900px) {
+  .content-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 60px 40px;
   }
 
-  &:focus {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: #CAF829;
-    box-shadow: 0 0 0 4px rgba(202, 248, 41, 0.1);
-  }
-
-  &.invalid {
-    border-color: #FF4444;
-    background: rgba(255, 68, 68, 0.08);
-
-    &:focus {
-      box-shadow: 0 0 0 4px rgba(255, 68, 68, 0.1);
-    }
-  }
-}
-
-.error-message {
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 13px;
-  color: #FF6B6B;
-  padding-left: 4px;
-  animation: slideDown 0.3s ease;
-
-  span {
-    display: block;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.submit-button {
-  padding: 16px 32px;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: #151934;
-  background: #CAF829;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 8px;
-  position: relative;
-  overflow: hidden;
-
-  &:hover {
-    background: #B8E623;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(202, 248, 41, 0.3);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-
-  .success-text {
-    color: #151934;
-    font-weight: 600;
-    animation: fadeIn 0.3s ease;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .figma-hero-container {
-    min-height: 100vh;
-    aspect-ratio: auto;
-  }
-
-  .content-wrapper {
-    padding: 8%;
-  }
-
-  .logos {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 60%;
-    height: auto;
-    margin-bottom: 10%;
-    max-width: 250px;
+  .library-preview {
+    max-width: 100%;
+    width: 100%;
   }
 
   .text-content {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
     max-width: 100%;
-    gap: 16px;
   }
 
-  .start-here-text {
-    font-size: clamp(20px, 5vw, 32px);
-    line-height: 1.5;
+  .heading {
+    font-size: clamp(24px, 6vw, 32px);
   }
 
-  .main-heading {
-    font-size: clamp(28px, 8vw, 48px);
+  .description {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .content-container {
+    padding: 40px 24px;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .library-preview {
+    order: 2;
+  }
+
+  .text-content {
+    order: 1;
+  }
+
+  .heading {
+    font-size: 24px;
     line-height: 1.2;
   }
 
-  .get-started-form {
-    max-width: 100%;
-    margin-top: 24px;
-  }
-
-  .form-input {
-    font-size: 16px;
-  }
-
-  .submit-button {
-    width: 100%;
-  }
-
-  .background-gradient {
-    left: -100%;
-    top: -20%;
-    width: 300%;
-    height: 600%;
-  }
-
-  .dark-overlay {
-    left: -10%;
-    top: -10%;
-    width: 120%;
-    height: 120%;
-  }
-
-  .background-image {
-    width: 120%;
-    height: 100%;
-    left: -10%;
-    object-fit: cover;
+  .description {
+    font-size: 13px;
+    line-height: 1.6;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .figma-hero-container {
-    min-height: 100vh;
+/* Small mobile */
+@media screen and (max-width: 400px) {
+  .content-container {
+    padding: 32px 20px;
+    gap: 20px;
   }
 
-  .content-wrapper {
-    padding: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .heading {
+    font-size: 22px;
   }
 
-  .logos {
-    width: 70%;
-    max-width: 200px;
-    margin-bottom: 15%;
-  }
-
-  .text-content {
-    gap: 12px;
-  }
-
-  .start-here-text {
-    font-size: 18px;
-    line-height: 1.4;
-  }
-
-  .main-heading {
-    font-size: 24px;
-    line-height: 1.3;
-  }
-
-  .get-started-form {
-    margin-top: 20px;
-    gap: 12px;
-  }
-
-  .form-input {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-
-  .submit-button {
-    padding: 14px 28px;
-    font-size: 15px;
+  .description {
+    font-size: 12px;
   }
 }

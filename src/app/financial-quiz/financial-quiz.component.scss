@@ -1,0 +1,375 @@
+// Quiz Container
+.quiz-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f9fafb;
+  
+  @media (max-width: 991.98px) {
+    flex-direction: column;
+  }
+}
+
+// Hero Section (Left Side)
+.hero-section {
+  position: relative;
+  flex: 0 0 49.3%;
+  background: linear-gradient(135deg, #00674f 0%, #1db894 100%);
+  overflow: hidden;
+  
+  @media (max-width: 991.98px) {
+    flex: none;
+    min-height: 400px;
+  }
+  
+  @media (max-width: 767.98px) {
+    min-height: 300px;
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00674f;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  right: -100px;
+  width: 730px;
+  height: 100%;
+  opacity: 0.3;
+  z-index: 2;
+  
+  @media (max-width: 991.98px) {
+    right: -200px;
+    opacity: 0.2;
+  }
+  
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 76px 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  
+  @media (max-width: 1199.98px) {
+    padding: 60px 40px;
+  }
+  
+  @media (max-width: 991.98px) {
+    padding: 40px 32px;
+    justify-content: center;
+    gap: 32px;
+  }
+  
+  @media (max-width: 767.98px) {
+    padding: 32px 24px;
+    gap: 24px;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  max-width: 175px;
+  height: auto;
+  
+  @media (max-width: 767.98px) {
+    max-width: 140px;
+  }
+}
+
+.hero-text {
+  max-width: 306px;
+  
+  @media (max-width: 991.98px) {
+    max-width: 100%;
+  }
+}
+
+.hero-title {
+  color: #fff;
+  font-family: Figtree, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.32px;
+  margin-bottom: 16px;
+  
+  @media (max-width: 1199.98px) {
+    font-size: 36px;
+  }
+  
+  @media (max-width: 991.98px) {
+    font-size: 32px;
+  }
+  
+  @media (max-width: 767.98px) {
+    font-size: 28px;
+  }
+}
+
+.hero-description {
+  color: #fff;
+  font-family: Figtree, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.223px;
+  margin-bottom: 0;
+  
+  @media (max-width: 1199.98px) {
+    font-size: 18px;
+  }
+  
+  @media (max-width: 991.98px) {
+    font-size: 16px;
+  }
+}
+
+// Quiz Section (Right Side)
+.quiz-section {
+  flex: 1;
+  padding: 86px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  
+  @media (max-width: 1199.98px) {
+    padding: 60px 32px;
+  }
+  
+  @media (max-width: 991.98px) {
+    padding: 40px 24px;
+  }
+  
+  @media (max-width: 767.98px) {
+    padding: 32px 20px;
+  }
+}
+
+.language-selector {
+  position: absolute;
+  top: 35px;
+  right: 57px;
+  
+  @media (max-width: 1199.98px) {
+    top: 24px;
+    right: 32px;
+  }
+  
+  @media (max-width: 991.98px) {
+    top: 16px;
+    right: 24px;
+  }
+  
+  @media (max-width: 767.98px) {
+    top: 12px;
+    right: 20px;
+  }
+  
+  button {
+    padding: 3px 7.5px;
+    border-radius: 3.75px;
+    font-size: 12px;
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+}
+
+.back-button {
+  color: #4a5565;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+// Quiz Card
+.quiz-card {
+  max-width: 583px;
+  width: 100%;
+  border-radius: 14px;
+  border: 2px solid #f3f4f6;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+  
+  @media (max-width: 767.98px) {
+    max-width: 100%;
+  }
+}
+
+.quiz-heading {
+  color: #101828;
+  font-family: Figtree, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.449px;
+  
+  @media (max-width: 767.98px) {
+    font-size: 18px;
+  }
+}
+
+.quiz-subtitle {
+  color: #4a5565;
+  font-family: Figtree, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.312px;
+  
+  @media (max-width: 767.98px) {
+    font-size: 14px;
+  }
+}
+
+// Progress Bar
+.progress-container {
+  .progress {
+    border-radius: 16777200px;
+    background: rgba(3, 2, 19, 0.2);
+  }
+  
+  .progress-bar {
+    background: #030213;
+    border-radius: 16777200px;
+    transition: width 0.3s ease;
+  }
+}
+
+// Question
+.question-text {
+  color: #101828;
+  font-family: Figtree, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.312px;
+  
+  @media (max-width: 767.98px) {
+    font-size: 15px;
+  }
+}
+
+// Options
+.option-item {
+  padding: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: #00674f;
+    background: rgba(0, 103, 79, 0.02);
+  }
+  
+  &.selected {
+    border-color: #00674f;
+    background: rgba(0, 103, 79, 0.05);
+  }
+}
+
+.radio-input {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background: #eee;
+  cursor: pointer;
+  flex-shrink: 0;
+  
+  &:checked {
+    background: #00674f;
+    border-color: #00674f;
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 103, 79, 0.25);
+  }
+}
+
+.option-label {
+  color: #364153;
+  font-family: Figtree, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.15px;
+  cursor: pointer;
+  margin-bottom: 0;
+  
+  @media (max-width: 767.98px) {
+    font-size: 13px;
+  }
+}
+
+// Navigation Buttons
+.back-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #4a5565;
+  font-size: 14px;
+  border: none;
+  background: transparent;
+  
+  &:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.next-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #00674f;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  
+  &:hover:not(:disabled) {
+    background: #005740;
+  }
+  
+  &:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+}
+
+// Support Text
+.support-text {
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: -0.15px;
+  font-family: Figtree, -apple-system, Roboto, Helvetica, sans-serif;
+  margin-bottom: 0;
+}
+
+.support-link {
+  color: #007a55;
+  
+  &:hover {
+    color: #005740;
+    text-decoration: underline !important;
+  }
+}
